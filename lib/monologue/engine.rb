@@ -4,6 +4,8 @@ require "select2-rails"
 require "jquery-rails"
 require "sass-rails"
 require "coffee-rails"
+require "paperclip"
+require "kaminari"
 
 module Monologue
   class Engine < Rails::Engine
