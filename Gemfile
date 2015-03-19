@@ -30,3 +30,4 @@ gem 'coveralls', require: false
 gem 'pg'
 
 gem 'kaminari'
+gem 'paperclip'

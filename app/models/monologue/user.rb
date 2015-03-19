@@ -1,4 +1,9 @@
 class Monologue::User < ActiveRecord::Base
+  self.table_name = 'users'
+
+  attr_accessor :password_digest
+  attr_accessor :name
+
   has_many :posts
 
   has_secure_password
