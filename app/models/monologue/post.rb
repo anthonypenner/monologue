@@ -13,7 +13,7 @@ class Monologue::Post < ActiveRecord::Base
   validates_attachment_content_type :landscape, :content_type => /\Aimage\/.*\Z/
 
   validates :user_id, presence: true
-  validates :title, :content, :url, :published_at, :landscape, presence: true
+  validates :title, :content, :url, :published_at, presence: true
   validates :url, uniqueness: true
   validate :url_do_not_start_with_slash
 
