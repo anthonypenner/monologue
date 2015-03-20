@@ -40,22 +40,6 @@ class Monologue::Post < ActiveRecord::Base
     self.published && self.published_at > DateTime.now
   end
 
-  def self.page p
-    per_page = Monologue::Config.posts_per_page || 10
-    set_total_pages(per_page)
-    p = (p.nil? ? 0 : p.to_i - 1)
-    offset =  p * per_page
-    self.limit(per_page).offset(offset)
-  end
-
-  def self.total_pages
-    @number_of_pages
-  end
-
-  def self.set_total_pages per_page
-    @number_of_pages = self.count / per_page + (self.count % per_page == 0 ? 0 : 1)
-  end
-
   private
 
   def generate_url
