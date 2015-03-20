@@ -3,7 +3,6 @@ xml.rss version: "2.0" do
   xml.channel do
     xml.title Monologue::Config.site_name
     xml.description Monologue::Config.meta_description
-    xml.link root_url
 
     for post in @posts
       xml.item do
