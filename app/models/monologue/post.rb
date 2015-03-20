@@ -11,6 +11,7 @@ class Monologue::Post < ActiveRecord::Base
 
   has_attached_file :landscape, :styles => { :large => "1066x708>", :thumb => "240x240>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :landscape, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_presence :landscape
 
   validates :user_id, presence: true
   validates :title, :content, :url, :published_at, presence: true
@@ -32,7 +33,7 @@ class Monologue::Post < ActiveRecord::Base
   end
 
   def full_url
-    "#{Monologue::Engine.routes.url_helpers.root_path}#{self.url}"
+    "/blogs/#{self.url}"
   end
 
   def published_in_future?

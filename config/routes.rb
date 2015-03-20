@@ -12,5 +12,4 @@ Monologue::Engine.routes.draw do
     match "/post/preview"=>"posts#preview", :as=>"post_preview", :via => [:put, :post]
   end
 
-  root to: 'blogs#index'
 end
